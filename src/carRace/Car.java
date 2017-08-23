@@ -1,15 +1,13 @@
 package carRace;
 import java.util.*;
 public class Car {
-    Random speed = new Random();
-    int carSpeed = speed.nextInt(110+1-80) + 80;
+    Random randomSpeed = new Random();
+    int carSpeed = randomSpeed.nextInt(110+1-80) + 80;
     public String name = null;
     int distanceTraveled = 0;
-    void moveForAnHour() {
-        this.distanceTraveled = distanceTraveled + carSpeed;
-    }
+
     public static String getRandomCarName() {
-        ArrayList<String> names = new ArrayList<String>();
+        ArrayList<String> names = new ArrayList<>();
         names.add("Roamer");
         names.add("Sliver");
         names.add("Oracle");
@@ -34,5 +32,8 @@ public class Car {
 
         String name = names.get(new Random().nextInt(names.size()));
         return name;
+    }
+    void moveForAnHour() {
+        this.distanceTraveled = distanceTraveled + carSpeed;
     }
 }
